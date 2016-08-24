@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles%}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A persistent problem solver with meticulous attention to detail and motivated by new challenges. Thanks for visiting my portfolio.">
+    <meta name="author" content="">
+
+    <title>Alec Barlow - Full Stack Developer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'my_page/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'my_page/css/stylish-portfolio.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'my_page/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top" onclick=$("#menu-close").click();>Alec Barlow</a>
+            </li>
+            <li>
+                <a href="#top" onclick=$("#menu-close").click();>Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+            <li>
+                <a href="#services" onclick=$("#menu-close").click();>Skills</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick=$("#menu-close").click();>Projects</a>
+            </li>
+            <li>
+                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Alec Barlow</h1>
+            <h3>Full Stack Developer</h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">About Me</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="lead">I am a persistent problem solver with meticulous attention to detail and motivated by new challenges.  Armed with a steadfast curiosity, I believe the process of solving a problem can be more important than the solution alone.
+                    <br>
+                    After discovering my passion for coding, and having graduated from Coding Dojo, I am excited by the prospects of entering a new field of work and look forward to finding a job as a Full Stack or Back-end Developer.
+                    </p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Skills</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <table class="table table-bordered table-responsive">
+                            <thead>
+                                <th>Programming Languages</th>
+                                <th>Front-End Development</th>
+                                <th>Frameworks</th>
+                                <th>Databases</th>
+                                <th>Servers</th>
+                                <th>Version Control</th>
+                                <th>Methodologies</th>
+                                <th>Other Proficiencies</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>HTML</td>
+                                    <td>Django</td>
+                                    <td>MySQL</td>
+                                    <td>NGINX</td>
+                                    <td>Git</td>
+                                    <td>Object-Oriented Programming</td>
+                                    <td>Microsoft Office</td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript</td>
+                                    <td>CSS</td>
+                                    <td>AngularJS</td>
+                                    <td>MongoDB</td>
+                                    <td>Node.js</td>
+                                    <td>Github</td>
+                                    <td>AJAX</td>
+                                    <td>Xcode</td>
+                                </tr>
+                                <tr>
+                                    <td>Swift</td>
+                                    <td>jQuery</td>
+                                    <td>Express.js</td>
+                                    <td>Mongoose.js</td>
+                                    <td>Apache</td>
+                                    <td></td>
+                                    <td>Single Page Applications</td>
+                                    <td>Amazon Web Services</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Socket.io</td>
+                                    <td>SQLite</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>MVC</td>
+                                    <td>Heroku</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Backbone.js</td>
+                                    <td>PostgreSQL</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Scrum</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Twitter Bootstrap</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Responsive Design</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Flask</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>                                  
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>My Work</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item" id="portfolio-2">
+                                <a data-toggle="modal" data-target="#portfolio-2-modal">
+                                    <img class="img-portfolio img-responsive" src="{% static 'my_page/img/portfolio-2.jpg' %}">
+                                </a>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a data-toggle="modal" data-target="#portfolio-1-modal">
+                                    <img class="img-portfolio img-responsive" src="{% static 'my_page/img/portfolio-1.jpg' %}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="portfolio-item">
+                                <a data-toggle="modal" data-target="#portfolio-3-modal">
+                                    <img class="img-portfolio img-responsive" src="{% static 'my_page/img/portfolio-3.jpg' %}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                    
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- Portfolio 1 Modal -->
+        <div class="modal fade" id="portfolio-1-modal" tabindex="-1" role="dialog" aria-labelledby="portfolioOneModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="portfolioOneModal">ReciMe: Personalize Your Cookbook</h4>
+              </div>
+              <div class="modal-body">
+                <p>A single-page web application utilizing the Food2Fork API to generate recipes based on the search term that a user inputs.  Resulting recipes can then be added to the user’s cookbook for quick retrieval.  Technologies used: Python, Django, Backbone.js, HTML, CSS, Twitter Bootstrap, Responsive Design.</p>
+                <a href="http://recime.abarlowcodes.com" target="_blank">View Application</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Portfolio 2 Modal -->
+        <div class="modal fade" id="portfolio-2-modal" tabindex="-1" role="dialog" aria-labelledby="portfolioTwoModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="portfolioTwoModal">Donation Inventory Manager</h4>
+              </div>
+              <div class="modal-body">
+                <p>This app was the result of a 4 week Scrum Project.  I was part of the development team tasked with building an application for internal use by Good Karma Bikes, a non-profit organization based in San Jose, CA.  The application allows staff and volunteers to check in and price a donation for re-sale, add it to the company’s Lightspeed Retail inventory system, and print a custom format label with a unique barcode.  The application turned a 30 minute task into one that took less that 2 minutes to complete.  Technologies used: Python, Django, AngularJS, Lightspeed Retail API, JsBarcode, HTML, CSS, Twitter Bootstrap, Responsive Design.
+                </p>
+                <a href="http://gkb.abarlowcodes.com" target="_blank">View Demo Version</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Portfolio 3 Modal -->
+        <div class="modal fade" id="portfolio-3-modal" tabindex="-1" role="dialog" aria-labelledby="portfolioThreeModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="portfolioThreeModal">Roomies</h4>
+              </div>
+              <div class="modal-body">
+                <p>Built by a team of three over four days, this is an iOS and web app allowing a household, or any group, to designate tasks with completion dates for users in the group.  Both apps share the same back-end and database and both utilize sockets in order to instantly update users with new information, including a real-time chat room for each task.  Technologies used: Swift, Xcode, JavaScript, Node.js, Express.js, Mongoose.js, Socket.io, AngularJS, HTML, CSS, MaterializeCSS.</p>
+                <a href="http://roomies.abarlowcodes.com" target="_blank">View Application</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1 style="color: white;">Thanks for visiting.</h1>
+        </div>
+    </aside>
+    <!-- Footer -->
+    <footer>
+        <div class="container" id="contact">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Alec Barlow</strong>
+                    </h4>
+                    <p>Cupertino, CA</p>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="http://www.linkedin.com/in/alec-barlow-b52959116" target="_blank"><i class="fa fa-linkedin-square fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/abarlow85" target="_blank"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Alec Barlow 2016</p>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'my_page/js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'my_page/js/bootstrap.min.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    </script>
+
+</body>
+
+</html>
