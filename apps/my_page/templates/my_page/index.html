@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load staticfiles%}
+{% load index %}
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A persistent problem solver with meticulous attention to detail and motivated by new challenges. Thanks for visiting my portfolio.">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Alec Barlow: A persistent problem solver with meticulous attention to detail and motivated by new challenges. Thanks for visiting my portfolio." />
+    <meta name="robots" content="index,follow" />
 
     <title>Alec Barlow - Full Stack Web Developer</title>
 
@@ -31,7 +32,6 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
@@ -62,7 +62,7 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>Alec Barlow</h1>
-            <h3>Full Stack Web  Developer</h3>
+            <h3>Full Stack Web Developer</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">About Me</a>
         </div>
@@ -73,9 +73,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="lead">I am a persistent problem solver with meticulous attention to detail.  Armed with a steadfast curiosity, I believe the process of solving a problem can be more important than the solution alone.
-                    <br>
-                    I am passionate about coding and leveraging technology to improve people's ability to do their jobs.</p>
+                    <p class="lead">{{about.0.text}}
+                    </p>
                 </div>
             </div>
             <!-- /.row -->
@@ -91,89 +90,25 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>Skills</h2>
                     <hr class="small">
-                    <div class="row">
-                        <table class="table table-bordered table-responsive">
+                    <div class="row table-responsive">
+                        <table class="table table-bordered">
                             <thead>
-                                <th>Programming Languages</th>
-                                <th>Front-End Development</th>
-                                <th>Frameworks</th>
-                                <th>Databases</th>
-                                <th>Servers</th>
-                                <th>Version Control</th>
-                                <th>Methodologies</th>
-                                <th>Other Proficiencies</th>
+                                {% for category in categories %}
+                                    <th>{{category.text}}</th>
+                                {% endfor %}
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>HTML</td>
-                                    <td>Django</td>
-                                    <td>MySQL</td>
-                                    <td>NGINX</td>
-                                    <td>Git</td>
-                                    <td>Object-Oriented Programming</td>
-                                    <td>Microsoft Office</td>
-                                </tr>
-                                <tr>
-                                    <td>JavaScript</td>
-                                    <td>CSS</td>
-                                    <td>AngularJS</td>
-                                    <td>MongoDB</td>
-                                    <td>Node.js</td>
-                                    <td>Github</td>
-                                    <td>AJAX</td>
-                                    <td>Xcode</td>
-                                </tr>
-                                <tr>
-                                    <td>Swift</td>
-                                    <td>jQuery</td>
-                                    <td>Express.js</td>
-                                    <td>Mongoose.js</td>
-                                    <td>Apache</td>
-                                    <td>AWS Code Commit</td>
-                                    <td>Single Page Applications</td>
-                                    <td>Amazon Web Services</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Socket.io</td>
-                                    <td>SQLite</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>MVC</td>
-                                    <td>Heroku</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Backbone.js</td>
-                                    <td>PostgreSQL</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Scrum</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Twitter Bootstrap</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Responsive Design</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Flask</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>                                  
-                                </tr>
+                                {% for row in table_rows  %}
+                                    <tr>
+                                        {% for category in categories %}
+                                            {% if row < category.skill_set.all|length %}
+                                                <td>{{category.skill_set.all|index:row}}</td>
+                                            {% else %}
+                                                <td></td>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
@@ -188,33 +123,22 @@
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
                     <h2>My Work</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item" id="portfolio-2">
-                                <a data-toggle="modal" data-target="#portfolio-2-modal">
-                                    <img class="img-portfolio img-responsive" src="{% static 'my_page/img/portfolio-2.jpg' %}">
-                                </a>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                      {% for app in portfolio %}
+                        <div class="col-md-6 {% if odd_apps and forloop.last %} col-md-offset-3 {% endif %}">
                             <div class="portfolio-item">
-                                <a data-toggle="modal" data-target="#portfolio-1-modal">
-                                    <img class="img-portfolio img-responsive" src="{% static 'my_page/img/portfolio-1.jpg' %}">
-                                </a>
+                                <a data-toggle="modal" data-target="#{{app.modal_target}}">
+                                    <img class="img-portfolio img-responsive" src="{{app.img_url}}">
+                                </a> 
                             </div>
+                            <hr class="large">
                         </div>
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="portfolio-item">
-                                <a data-toggle="modal" data-target="#portfolio-3-modal">
-                                    <img class="img-portfolio img-responsive" src="{% static 'my_page/img/portfolio-3.jpg' %}">
-                                </a>
-                            </div>
-                        </div>
+
+                      {% endfor %}
                     </div>
                     <!-- /.row (nested) -->
                     
@@ -225,17 +149,28 @@
         </div>
         <!-- /.container -->
     </section>
-    <!-- Portfolio 1 Modal -->
-        <div class="modal fade" id="portfolio-1-modal" tabindex="-1" role="dialog" aria-labelledby="portfolioOneModal">
+    
+    {% for app in portfolio  %}
+      <div class="modal fade" id="{{app.modal_target}}" tabindex="-1" role="dialog" aria-labelledby="{{app.modal_target}}Label">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="portfolioOneModal">ReciMe: Personalize Your Cookbook</h4>
+                <h4 class="modal-title" id="{{app.modal_target}}Label">{{app.title}}</h4>
               </div>
               <div class="modal-body">
-                <p>A single-page web application utilizing the Food2Fork API to generate recipes based on the search term that a user inputs.  Resulting recipes can then be added to the user’s cookbook for quick retrieval.  Technologies used: Python, Django, Backbone.js, HTML, CSS, Twitter Bootstrap, Responsive Design.</p>
-                <a href="http://recime.abarlowcodes.com" target="_blank">View Application</a>
+                <p>{{app.description}}</p>
+                {% if app.description2 %}
+                  <br>
+                  <p>{{app.description2}}</p>
+                {% endif %}
+                {% if app.modal_img_url %}
+                  <img src="{{app.modal_img_url}}" class="img-portfolio img-responsive" >
+                {% endif %}
+                <div class="text-center">
+                  <a href="{{app.app_url}}" target="_blank">{{app.app_url_text}}</a>
+                </div>
+                
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
@@ -243,43 +178,7 @@
             </div>
           </div>
         </div>
-    <!-- Portfolio 2 Modal -->
-        <div class="modal fade" id="portfolio-2-modal" tabindex="-1" role="dialog" aria-labelledby="portfolioTwoModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="portfolioTwoModal">Donation Inventory Manager</h4>
-              </div>
-              <div class="modal-body">
-                <p>This app was the result of a 4 week Scrum Project.  I was part of the development team tasked with building an application for internal use by Good Karma Bikes, a non-profit organization based in San Jose, CA.  The application allows staff and volunteers to check in and price a donation for re-sale, add it to the company’s Lightspeed Retail inventory system, and print a custom format label with a unique barcode.  The application turned a 30 minute task into one that took less that 2 minutes to complete.  Technologies used: Python, Django, AngularJS, Lightspeed Retail API, JsBarcode, HTML, CSS, Twitter Bootstrap, Responsive Design.
-                </p>
-                <a href="http://gkb.abarlowcodes.com" target="_blank">View Demo Version</a>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    <!-- Portfolio 3 Modal -->
-        <div class="modal fade" id="portfolio-3-modal" tabindex="-1" role="dialog" aria-labelledby="portfolioThreeModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="portfolioThreeModal">Roomies</h4>
-              </div>
-              <div class="modal-body">
-                <p>Built by a team of three over four days, this is an iOS and web app allowing a household, or any group, to designate tasks with completion dates for users in the group.  Both apps share the same back-end and database and both utilize sockets in order to instantly update users with new information, including a real-time chat room for each task.  Technologies used: Swift, Xcode, JavaScript, Node.js, Express.js, Mongoose.js, Socket.io, AngularJS, HTML, CSS, MaterializeCSS.</p>
-                <a href="http://roomies.abarlowcodes.com" target="_blank">View Application</a>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+    {% endfor %}
 
     <!-- Callout -->
     <aside class="callout">
@@ -294,15 +193,14 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>Alec Barlow</strong>
                     </h4>
-                    <p>Cupertino, CA</p>
+                    <p>{{about.0.location}}</p>
                     <br>
                     <ul class="list-inline">
+                      {% for link in  socials %}
                         <li>
-                            <a href="http://www.linkedin.com/in/alec-barlow-b52959116" target="_blank"><i class="fa fa-linkedin-square fa-fw fa-3x"></i></a>
+                            <a href="{{link.url}}" target="_blank"><i class="fa {{link.fa_class}} fa-fw fa-3x"></i></a>
                         </li>
-                        <li>
-                            <a href="https://github.com/abarlow85" target="_blank"><i class="fa fa-github fa-fw fa-3x"></i></a>
-                        </li>
+                      {% endfor %}
                     </ul>
                     <hr class="small">
                     <p class="text-muted">Copyright &copy; Alec Barlow 2016</p>
@@ -345,6 +243,11 @@
             }
         });
     });
+
+    {% if not request.user.is_superuser %}
+      // csrf_test
+      $.post('/' ,[],function(r){console.log(r);});
+    {% endif %}
     //#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {

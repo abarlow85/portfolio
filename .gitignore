@@ -1,1 +1,4 @@
 venv/
+*.pyc
+views2.py
+keys.txt
